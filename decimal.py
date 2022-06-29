@@ -11,12 +11,14 @@ n은 2이상 1000000이하의 자연수입니다.
 
 """
 
+
 def solution(n):
     answer = 0
 
-    for i in n:
-        if n%i == 0:
-            answer += 1
-            n -= 1
+    num = set(range(2, n + 1))
 
-    return answer
+    for i in range(2, n + 1):
+        if i in num:
+            num -= set(range(2 * i, n + 1, i))
+
+    return len(num)
