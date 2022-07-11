@@ -33,8 +33,14 @@ import math
 
 def solution(num):
     # Write code here.
-    answer = 0
-    return answer
+    num += 1
+    digit = 1
+
+    while num // digit % 10 == 0:
+        num += digit
+        digit *= 10
+
+    return num
 
 
 #The following is code to output testcase.
