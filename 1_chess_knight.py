@@ -41,8 +41,16 @@
 #import math
 
 def solution(pos):
-    # Write code here.
+    dx = [1,1,-1,-1,2,2,-2,-2]
+    dy = [2,-2,-2,2,1,-1,-1,1]
+    cx = ord(pos[0]) - ord("A")
+    cy = ord(pos[1]) - ord("0") - 1
     answer = 0
+    for i in range(8):
+        nx = cx + dx[i]
+        ny = cy + dy[i]
+        if nx >= 0 and nx <8 and ny >= 0 and ny < 8:
+            answer += 1
     return answer
 
 #The following is code to output testcase.
