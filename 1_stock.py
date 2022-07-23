@@ -47,7 +47,7 @@ def solution(prices):
     answer = -INF
     for price in prices:
         if tmp != INF:
-            answer = max(answer, price-tmp)
+            answer = max(answer, price-tmp) #check
         tmp = min(tmp, price)
     return answer
 
