@@ -52,7 +52,7 @@ def solution(N, votes):
     answer = []
     for idx in range(1, N + 1):
         if vote_counter[idx] == max_val:
-            answer.append(idx)
+            answer.append(idx) #check
     return answer
 
 
