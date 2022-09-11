@@ -46,8 +46,8 @@ def solution(money):
     counter = 0
     idx = len(coin) - 1
     while money:
-        counter += 1
-        money %= 10
+        counter += money // coin[idx]
+        money %= coin[idx]
         idx -= 1
     return counter
 

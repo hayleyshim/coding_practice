@@ -55,8 +55,8 @@ def solution(subway_times, current_time):
     INF = 1000000000
     answer = INF
     for s in subway_times:
-        subway_minute = func_a(subway_times)
-        if s == 0:
+        subway_minute = func_a(s)
+        if subway_minute >= current_minute:
             answer = subway_minute - current_minute
             break
     if answer == INF:
