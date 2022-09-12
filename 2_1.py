@@ -56,7 +56,8 @@
 
 from abc import *
  
-    
+# Book 추상클래스 : 바로 객체를 못쓰고 상속을 통해서만 사용 가능 -> 인터페이스
+# 클래스 : 상속, 메서드 체크
 class Book(metaclass=ABCMeta):
     @abstractmethod
     def get_rental_price(self, day):

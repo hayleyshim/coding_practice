@@ -78,13 +78,17 @@ def func_a(n):
         n -= 1
     return ret
 
-def func_b(n):
-    ret = 0
+#n의 자릿수 반환
+def func_b(n):  #n => 350, 35, 3, 0 ...
+    ret = 0     #ret = 0,1,2,3
     while n > 0:
         ret += 1
         n //= 10
     return ret
 
+#n => 367,36,3
+#ret => 0+7+6+3
+#n의 각 자릿수 합
 def func_c(n):
     ret = 0
     while n > 0:

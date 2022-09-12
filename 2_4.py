@@ -40,7 +40,12 @@ def solution(arr, K):
     #여기에 코드를 작성해주세요
     answer = 0
 
-
+    for i in range(len(arr)-2):
+        for j in range(i+1, len(arr)-1):
+            for k in range(j+1, len(arr)):
+                tot = arr[i] + arr[j] + arr[k]
+                if not tot % k:
+                    answer += 1
 
     return answer
 

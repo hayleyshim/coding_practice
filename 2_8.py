@@ -41,12 +41,12 @@
 
 """
 
-def solution(arr):
+def solution(arr): #[1,2,3,4,5,6]
     left, right = 0, len(arr) - 1
-    idx = 0
-    answer = [0 for _ in range(len(arr))]
-    while left <= right:
-        if left % 2 == 0:
+    idx = 0 #새로운 리스트에 숫자를 넣을 위치
+    answer = [0 for _ in range(len(arr))] #새로운 리스트
+    while left <= right: # 0 <= 5
+        if idx % 2 == 0:
             answer[idx] = arr[left]
             left += 1
         else:

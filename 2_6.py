@@ -39,10 +39,20 @@
 #다음과 같이 import를 사용할 수 있습니다.
 #import math
 
+#move1 = {'L':[-1,0], 'R':[1,0], 'U':[0,1], 'D':[0,-1]}
+#move2 = dict(zip('LRUD', [[-1,0],[1,0],[0,1],[0,-1]]))
+
 def solution(commands):
     # 여기에 코드를 작성해주세요.
-    answer = []
-    return answer
+
+    move = dict(zip('LRUD', [[-1,0],[1,0],[0,1],[0,-1]]))
+    rX, rY = 0, 0 #로봇으 ㅣ초기위치
+    for c in commands:
+        #print(move[c])
+        dX, dY = move[c]
+        rX += dX
+        rY += dY
+    return [rX, rY] #로봇의 최종위치
 
 #아래는 테스트케이스 출력을 해보기 위한 코드입니다.
 commands = "URDDL"
