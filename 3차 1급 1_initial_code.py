@@ -2,10 +2,11 @@ def func_a(arr): #arr 리스트 길이 2배 만들기
     ret = arr + arr
     return ret
 
+#구성성분 비교
 def func_b(first, second): #회전했을 때 같은지 비교
     MAX_NUMBER = 1001
     counter = [0 for _ in range(MAX_NUMBER)]
-    for f, s in zip(first, second):
+    for f, s in zip(first, second): #개수 세면서 구성성분 같은지 볼 수 있음
         counter[f] += 1
         counter[s] -= 1
     for c in counter:
@@ -13,7 +14,7 @@ def func_b(first, second): #회전했을 때 같은지 비교
             return False
     return True
 
-def func_c(first, second): #같은 리스트가 있는지 비교
+def func_c(first, second): #부분 리스트 중 같은 리스트가 있는지 비교
     length = len(second)
     for i in range(length):
         if first[i : i + length] == second:
@@ -23,9 +24,9 @@ def func_c(first, second): #같은 리스트가 있는지 비교
 def solution(arrA, arrB):
     if len(arrA) != len(arrB): #길이가 같지 않으면 false return
         return False
-    if func_b(arrA, arrB): #arrA 부분 리스트 중 arrB와 같은 리스트가 있으면 true, 그렇지않으면 false return
-        arrA_temp = func_c(arrA, arrB)
-        if func_a(arrA_temp):
+    if func_b(arrA, arrB): #arrA 부분 리스d트 중 arrB와 같은 리스트가 있으면 true, 그렇지않으면 false return
+        arrA_temp = func_a(arrA)
+        if func_c(arrA_temp, arrB):
             return True
     return False
 
