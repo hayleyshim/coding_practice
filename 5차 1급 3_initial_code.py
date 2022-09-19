@@ -8,7 +8,7 @@ def solution(numbers):
     print(numbers)
     left = mid + 1
 
-    right = len(numbers)-1
+    right = len(numbers)-2
 
     while left <= right:
     	numbers[left], numbers[right] = numbers[right], numbers[left]
