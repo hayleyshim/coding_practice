@@ -38,16 +38,16 @@
 
 def solution(arr, K):
     #여기에 코드를 작성해주세요
-    answer = 0
+    n = len(arr)
+    count = 0
 
-    for i in range(len(arr)-2):
-        for j in range(i+1, len(arr)-1):
-            for k in range(j+1, len(arr)):
-                tot = arr[i] + arr[j] + arr[k]
-                if not tot % k:
-                    answer += 1
+    for p in range(0,n):
+        for q in range(p+1, n):
+            for r in range(q+1, n):
+                if (arr[p] + arr[q] + arr[r]) % K ==0:
+                    count += 1
 
-    return answer
+    return count
 
 #아래는 테스트케이스 출력을 해보기 위한 코드입니다.
 arr = [1, 2, 3, 4, 5]

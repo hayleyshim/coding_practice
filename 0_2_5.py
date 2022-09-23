@@ -38,21 +38,12 @@
 def solution(arr):
     #여기에 코드를 작성해주세요.
 
-    prev = arr[0]
-    cnt = 1
-    max_cnt = 1
-    for curr in arr[1:]:
-        if prev < curr:
-            cnt += 1
-            #max_cnt = max(max_cnt, cnt)
-        else:
-            #max_cnt = max(max_cnt, cnt)
-            cnt = 1
-        prev = curr
-        # cnt = cnt + 1 if prev < curr else 1
-        # prev = curr
-        # max_cnt = max(max_cnt, cnt)
-    return max_cnt
+    dp = [1 for _ in range(len(arr))]
+    for i in range(1, len(arr)):
+        if arr[i] > arr[i-1]:
+            dp[i] = dp[i-1] + 1
+    answer = max(dp)
+    return answer
 
 #아래는 테스트케이스 출력을 해보기 위한 코드입니다.
 arr = [3, 1, 2, 4, 5, 1, 2, 2, 3, 4]

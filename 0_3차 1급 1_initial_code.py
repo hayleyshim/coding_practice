@@ -14,7 +14,7 @@ def func_b(first, second): #회전했을 때 같은지 비교
             return False
     return True
 
-def func_c(first, second): #부분 리스트 중 같은 리스트가 있는지 비교
+def func_c(first, second): #부분 리스트 중 같은 리K스트가 있는지 비교
     length = len(second)
     for i in range(length):
         if first[i : i + length] == second:

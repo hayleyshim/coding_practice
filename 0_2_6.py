@@ -45,14 +45,18 @@
 def solution(commands):
     # 여기에 코드를 작성해주세요.
 
-    move = dict(zip('LRUD', [[-1,0],[1,0],[0,1],[0,-1]]))
-    rX, rY = 0, 0 #로봇으 ㅣ초기위치
-    for c in commands:
-        #print(move[c])
-        dX, dY = move[c]
-        rX += dX
-        rY += dY
-    return [rX, rY] #로봇의 최종위치
+    current_position = [0,0]
+
+    for d in commands:
+        if d == 'L':
+            current_position[0] -= 1
+        elif d == 'R':
+            current_position[0] += 1
+        elif d == 'U':
+            current_position[1] += 1
+        elif d == 'D':
+            current_position[1] -= 1
+    return current_position
 
 #아래는 테스트케이스 출력을 해보기 위한 코드입니다.
 commands = "URDDL"
